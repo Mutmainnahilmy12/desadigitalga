@@ -1,0 +1,228 @@
+/* RESET & BODY */
+/* === BACKGROUND LOGIN YANG MODERN === */
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === FORM LOGIN MODERN === */
+.form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.form-container h2 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body.image-bg {
+  background: url('gambar1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: brightness(0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* FORM STYLES */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 320px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #218838;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* DASHBOARD LAYOUT */
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  width: 250px;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.sidebar h2 {
+  margin-bottom: 10px;
+}
+.sidebar p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+.sidebar nav ul {
+  list-style: none;
+}
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.sidebar nav ul li a:hover {
+  color: #1abc9c;
+}
+.sidebar button {
+  margin-top: auto;
+  background-color: #e74c3c;
+}
+.sidebar button:hover {
+  background-color: #c0392b;
+}
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: #ecf0f1;
+}
+.main-content h1 {
+  margin-bottom: 15px;
+}
+.sidebar nav ul li a.active {
+  background-color: #1abc9c;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: block;
+}
+
+.content-section {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.content-section:not(.hidden) {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* === BACKGROUND GAMBAR UNTUK LOGIN & REGISTER === */
+body.image-bg {
+  background: url('gambar1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Gelapkan background agar form lebih jelas */
+body.image-bg::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.form-container {
+  position: relative;
+  z-index: 1;
+}
+

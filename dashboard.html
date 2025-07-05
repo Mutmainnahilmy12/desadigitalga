@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Sistem Informasi Desa Gili Anyar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Desa Gili Anyar</h2>
+      <p id="userLabel">Halo, pengguna!</p>
+      <nav>
+        <ul>
+          <li><a href="#" class="active" onclick="activateMenu(this); showContent('profil')">📌 Profil Desa</a></li>
+          <li><a href="#" onclick="activateMenu(this); showContent('layanan')">🧾 Layanan Warga</a></li>
+          <li><a href="#" onclick="activateMenu(this); showContent('berita')">📰 Berita & Pengumuman</a></li>
+        </ul>
+      </nav>
+      <button onclick="logout()">🚪 Logout</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Profil Desa -->
+      <div id="profil" class="content-section">
+        <h1>Profil Desa Gili Anyar</h1>
+        <p><strong>Desa Gili Anyar</strong> adalah salah satu desa yang terletak di wilayah pesisir dengan potensi alam dan budaya yang kaya. Desa ini memiliki lingkungan yang asri, masyarakat yang ramah, dan kearifan lokal yang masih terjaga hingga kini.</p>
+        <p>Desa Gili Anyar dikenal sebagai desa yang berkomitmen terhadap pembangunan berkelanjutan, dengan mengedepankan prinsip gotong royong, transparansi pelayanan publik, serta pemberdayaan masyarakat. Sebagian besar penduduknya bekerja sebagai nelayan, petani, serta pengrajin lokal yang menghasilkan berbagai produk unggulan desa.</p>
+        <p>Dengan adanya <strong>Sistem Informasi Desa Gili Anyar</strong>, kami berharap dapat memberikan pelayanan yang lebih cepat, transparan, dan mudah diakses oleh seluruh warga dan pihak luar yang membutuhkan informasi terkait desa.</p>
+      </div>
+
+      <!-- Layanan -->
+      <div id="layanan" class="content-section hidden">
+        <h1>Layanan Warga</h1>
+        <ul>
+          <li>✔️ Pengajuan Surat Keterangan Domisili</li>
+          <li>✔️ Permohonan KTP/KK</li>
+          <li>✔️ Pelaporan RT/RW</li>
+        </ul>
+      </div>
+
+      <!-- Berita -->
+      <div id="berita" class="content-section hidden">
+        <h1>Berita & Pengumuman</h1>
+        <ul>
+          <li><strong>[05 Juli 2025]</strong> Penyaluran bantuan pupuk subsidi minggu depan.</li>
+          <li><strong>[02 Juli 2025]</strong> Gotong royong di balai desa pada hari Sabtu.</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Cek login
+    const user = localStorage.getItem('loggedInUser');
+    if (!user) {
+      alert("Harap login terlebih dahulu.");
+      window.location.href = "index.html";
+    } else {
+      document.getElementById('userLabel').textContent = "Halo, bapak " + user + "!";
+    }
+
+    function logout() {
+      localStorage.removeItem('loggedInUser');
+      window.location.href = "index.html";
+    }
+
+    function activateMenu(el) {
+      const links = document.querySelectorAll('.sidebar nav a');
+      links.forEach(link => link.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function showContent(id) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
